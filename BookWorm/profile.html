@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookWorms - Profile</title>
+    
+  <link rel="stylesheet" href="global.css">
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+
+    <div class="logo-section">
+      <img src="media/logo.png" alt="Logo" class="logo">
+      <h1 class="site-name">Bookworms</h1>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav-links">
+        <li class="divider">|</li>
+        <li><a href="feed.html">Feed</a></li>
+        <li class="divider">|</li>
+        <li><a href="profile.html" onclick="resetProfileView()">Profile</a></li>
+
+        <li id="signup-group">
+          <span class="divider">|</span>
+          <a href="signup.html">Sign Up</a>
+          <span class="divider">|</span>
+      </li>
+        <li><a href="login.html" id="login-btn" onclick="resetProfileView()">Log In</a></li>
+        <li class="divider">|</li>
+        <li><button id="dark-mode-toggle">🌙</button></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main class="profile-container">
+
+  <section class="profile-header-top">
+    <div class="photo-name-row">
+      <img src="media/profile_photo.png" alt="Profile Photo" class="profile-photo-large" id="profile-pic" width="150px">
+      <h2 id="display-name" class="account-name">name</h2>
+    </div>
+
+    <div class="username-row">
+      <p id="display-username">@username</p>
+    </div>
+
+    <div class="bio-section">
+      <p id="display-bio">this is my bio..</p>
+    </div>
+
+    <div class="stats-inline-row">
+      <span class="stat-item"><strong id="post-count">0</strong> posts</span>
+      <span class="stat-item"><strong id="follower-count">0</strong> followers</span>
+      <span class="stat-item"><strong id="following-count">0</strong> following</span>
+    </div>
+
+    <div class="profile-btn-row">
+      <button type="button" id="edit-profile-btn">Edit</button>
+      <button type="button" id="logout-btn">Log Out</button>
+    </div>
+  </section>
+
+  <section id="edit-form-container" class="hidden">
+    <h3>Edit Profile</h3>
+    <form id="edit-profile-form">
+      <label for="input-photo">Photo URL:</label><br>
+      <input type="text" id="input-photo" name="photo" placeholder="Paste image link here"><br>
+
+      <label for="input-name">Name:</label><br>
+      <input type="text" id="input-name" name="profile-name"><br>
+
+      <label for="input-username">Username:</label><br>
+      <input type="text" id="input-username" name="username"><br>
+
+      <label for="input-bio">Bio:</label><br>
+      <textarea id="input-bio" name="bio" rows="4" placeholder="Write something about your reading journey..."></textarea><br>
+
+      <button type="button" id="save-changes-btn">Save Changes</button>
+      <button type="button" id="cancel-edit-btn">Cancel</button>
+    </form>
+  </section>
+
+  <div class="posts-section">
+    <button id="toggle-create-post-btn">+ New Post</button>
+
+    <section class="create-post-section hidden" id="create-post-section">
+      <h3>Create a Post</h3>
+      <textarea id="post-input" placeholder="Share a book quote or thought..." rows="3"></textarea>
+      <input type="text" id="author-input" placeholder="Add the author name">
+      <input type="text" id="book-input" placeholder="Add the book title (optional)">
+      <br><br><button id="post-btn">Post</button>
+    </section>
+
+    <section class="profile-main-feed" id="content-area">
+      <div id="user-posts-list">
+        <p class="empty-msg">No posts yet. Start sharing your favorite quotes!</p>
+      </div>
+    </section>
+    
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Bookworms. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
